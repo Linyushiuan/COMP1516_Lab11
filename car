@@ -1,0 +1,24 @@
+# author: Yu-shiuan Lin
+
+class Car:
+    """ Represent a car in a car lot. """
+
+    def __init__(self, make, model, year, cost, price_use):
+        self._make = make
+        self._model = model
+        self._year = year
+        self._cost = cost
+        self._price_use = price_use
+
+    def calc_profit_usd(self):
+        """ Returns the projected profit in USD. """
+        return self._price_use - self._cost
+
+    def get_details(self):
+        # TODO
+        return f"{self._year} {self._make} {self._model} for sale for $%.2f USD" % self._price_use
+
+    def reduce_price_usd(self, reduction):
+        # TODO
+        self._price_use -= reduction
+        return self.calc_profit_usd()
